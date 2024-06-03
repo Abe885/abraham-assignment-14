@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f6f6f6;
+    margin: 0;
+    padding: 0;
+}
+
+#channelContainer {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+#channelHeader {
+    background-color: #4a76a8;
+    color: white;
+    padding: 15px 20px;
+    font-size: 1.5em;
+}
+
+#messageList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.message-item {
+    display: flex;
+    padding: 10px 20px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.message-item:nth-child(odd) {
+    background-color: #fafafa;
+}
+
+.message-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ddd;
+    margin-right: 10px;
+}
+
+.message-content {
+    flex: 1;
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.message-username {
+    color: #333;
+}
+
+.message-timestamp {
+    color: #999;
+    font-size: 0.85em;
+}
+
+.message-text {
+    margin: 0;
+    font-size: 1em;
+    color: #333;
+}
+
+#messageForm {
+    display: flex;
+    padding: 10px 20px;
+    border-top: 1px solid #f1f1f1;
+}
+
+#messageInput {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+#messageForm button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #4a76a8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#messageForm button:hover {
+    background-color: #3c5d87;
+}

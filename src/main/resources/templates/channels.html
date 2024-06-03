@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Channels</title>
+        <link rel="stylesheet" type="text/css" href="/styles.css">
+    </head>
+    <body>
+          <h1>Channels</h1>
+         <form th:action="@{/createChannel}" method="post">
+               <label>Channel Name:</label>
+               <input th:field="${channel.channelName}" type="text" id="channelName" required/>
+              <button id="createChannelBtn" type="submit">Create Channel</button>
+          </form>
+         <div>
+             <ul th:each="channel : ${channels}">
+                 <li><a th:href="@{/channels/{id}(id=${channel.channelId})}" th:text="${channel.channelName}"></a></li>
+             </ul>
+         </div>
+    </body>
+</html>

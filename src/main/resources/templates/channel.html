@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Channel</title>
+        <link rel="stylesheet" type="text/css" href="/styles.css">
+    </head>
+    <body>
+        <div id="channelContainer">
+            <div id="channelHeader">Channel: <span th:text="${channel.channelName}"></span></div>
+            <input type="hidden" id="channelId" th:value="${channel.channelId}"/>
+            <ul id="messageList"></ul>
+            <form id="messageForm">
+                <input type="text" id="messageInput" required/>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+        <script type="text/javascript" src="/channels.js"></script>
+    </body>
+</html>
+
