@@ -11,7 +11,6 @@ function pollMessages(channelId) {
     fetch(`/messages/${channelId}`)
         .then(response => response.json())
         .then(messages => {
-            console.log('Fetched messages:', messages); // Debugging line
             const messageList = document.getElementById('messageList');
             messageList.innerHTML = '';
             messages.forEach(message => {
@@ -40,7 +39,6 @@ function pollMessages(channelId) {
                 const timestamp = document.createElement('span');
                 timestamp.classList.add('message-timestamp');
                 const messageTimestamp = new Date(message.timestamp);
-                console.log('Message Timestamp:', messageTimestamp); // Debugging line
                 timestamp.textContent = messageTimestamp.toLocaleString('en-US', {
                     year: 'numeric',
                     month: 'short',
@@ -48,8 +46,7 @@ function pollMessages(channelId) {
                     hour: '2-digit',
                     minute: '2-digit'
                 });
-                console.log('Timestamp element:', timestamp);
-                console.log('Timestamp textContent:', timestamp.textContent);
+
                 messageHeader.appendChild(timestamp);
 
                 messageContent.appendChild(messageHeader);
@@ -70,7 +67,12 @@ function pollMessages(channelId) {
 
 function sendMessage(channelId) {
     const messageInput = document.getElementById('messageInput');
-    const messageText = messageInput.value;
+    const messageText = messageInput.value.trim();
+
+    if (!messageText) {
+        alert('Type a message!')
+        return;
+    }
 
     const message = {
         text: messageText,
@@ -87,7 +89,6 @@ function sendMessage(channelId) {
     })
         .then(response => response.json())
         .then(data => {
-            console.log('Message sent successfully:', data);
             messageInput.value = '';
             pollMessages(channelId);
         })
@@ -98,7 +99,7 @@ function sendMessage(channelId) {
 
 document.addEventListener('DOMContentLoaded', () => {
     const channelId = document.getElementById('channelId').value;
-    setInterval(() => pollMessages(channelId), 500);
+    setInterval(() => pollMessages(channelId), 1000);
 
     const messageForm = document.getElementById('messageForm');
     messageForm.addEventListener('submit', (event) => {

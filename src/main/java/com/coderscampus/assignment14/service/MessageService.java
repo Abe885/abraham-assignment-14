@@ -16,10 +16,16 @@ public class MessageService {
     }
 
     public List<Message> getMessagesByChannelId(Long channelId) {
+        if (channelId == null) {
+            throw new IllegalArgumentException("Channel ID cannot be null");
+        }
         return messageRepository.findByChannelId(channelId);
     }
 
     public Message saveMessage(Message message) {
+        if (message == null || message.getUser() == null || message.getChannel() == null) {
+            throw new IllegalArgumentException("Message, User, and Channel cannot be null");
+        }
         return messageRepository.save(message);
     }
 }

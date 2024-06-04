@@ -1,10 +1,8 @@
 package com.coderscampus.assignment14.repository;
 
 import com.coderscampus.assignment14.domain.Message;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicLong;

@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
-    <head>
-        <meta charset="UTF-8">
-        <script src="https://kit.fontawesome.com/ce9e0953f6.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" type="text/css" href="/styles.css">
-        <title>Welcome!</title>
-    </head>
-    <body>
-        <h1>Chat app</h1>
-        <form action="/register" method="post">
-            <div>
-                <label>Username:</label>
-                <input type="text" th:field="${user.username}" required/>
-            </div>
-            <div>
-                <label>Password:</label>
-                <input type="password" th:field="${user.password}" required/>
-                <i id="passwordEyeIcon" class="far fa-eye"></i>
-            </div>
-            <div>
-                <label>Confirm Password: </label>
-                <input type="password" id="confirmPassword" required/>
-                <i id="confirmPasswordEyeIcon" class="far fa-eye"></i>
-            </div>
-            <button type="submit" onclick="return validatePassword()"> Create User</button>
-        </form>
-        <script type="text/javascript" src="/welcome.js"></script>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/ce9e0953f6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <title>Welcome!</title>
+</head>
+<body>
+<div class="container">
+    <h1>Chat App</h1>
+    <form action="/register" method="post">
+        <div>
+            <label>Username:</label>
+            <input type="text" th:field="${user.username}" required/>
+        </div>
+        <div>
+            <label>Password:</label>
+            <input type="password" th:field="${user.password}" required/>
+            <i id="passwordEyeIcon" class="far fa-eye"></i>
+        </div>
+        <div>
+            <label>Confirm Password: </label>
+            <input type="password" id="confirmPassword" required/>
+            <i id="confirmPasswordEyeIcon" class="far fa-eye"></i>
+            <button type="submit" onclick="return validatePassword()">Create User</button>
+        </div>
+
+    </form>
+</div>
+<script type="text/javascript" src="/welcome.js"></script>
+</body>
 </html>

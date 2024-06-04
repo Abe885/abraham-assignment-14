@@ -1,6 +1,5 @@
 package com.coderscampus.assignment14.domain;
 
-import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

@@ -5,6 +5,7 @@ body {
     padding: 0;
 }
 
+/* Channel Container Styles */
 #channelContainer {
     width: 80%;
     margin: 20px auto;
@@ -18,9 +19,29 @@ body {
     background-color: #4a76a8;
     color: white;
     padding: 15px 20px;
-    font-size: 1.5em;
+    font-size: 2.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
+#returnButton {
+    background-color: #4a76a8;
+    color: white;
+    border: 1px solid #4a76a8;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    align-self: flex-end;
+}
+
+#returnButton:hover {
+    background-color: #3c5d87;
+    border-color: #3c5d87;
+}
+
+/* Message Styles */
 #messageList {
     list-style-type: none;
     padding: 0;
@@ -99,4 +120,75 @@ body {
 
 #messageForm button:hover {
     background-color: #3c5d87;
+}
+
+/* Styles for Channels and Welcome Pages */
+.container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #4a76a8;
+}
+
+h2 {
+    color: #4a76a8;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form label {
+    font-weight: bold;
+    color: #4a76a8;
+}
+
+form input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+form button, #createChannelBtn {
+    background-color: #4a76a8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+form button:hover, #createChannelBtn:hover {
+    background-color: #3c5d87;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #4a76a8;
+    font-size: 2em;
+}
+
+ul li a:hover {
+    text-decoration: underline;
 }
