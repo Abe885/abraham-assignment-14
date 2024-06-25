@@ -1,5 +1,4 @@
-let username = sessionStorage.getItem('username');
-console.log('Retrieved username from session storage:', username);
+let username = localStorage.getItem('username');
 
 if (!username) {
     window.location.href = '/welcome';
@@ -97,9 +96,26 @@ function sendMessage(channelId) {
         });
 }
 
+document.getElementById("messageForm").addEventListener("submit", function(event) {
+    if (!validateMessage()) {
+        event.preventDefault();
+    }
+});
+
+function validateMessage() {
+    const messageInput = document.getElementById("messageInput");
+    if (messageInput.value.trim() === "") {
+        alert("Message cannot be empty.");
+        return false;
+    }
+    return true;
+}
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const channelId = document.getElementById('channelId').value;
-    setInterval(() => pollMessages(channelId), 1000);
+    setInterval(() => pollMessages(channelId), 600);
 
     const messageForm = document.getElementById('messageForm');
     messageForm.addEventListener('submit', (event) => {
@@ -107,3 +123,12 @@ document.addEventListener('DOMContentLoaded', () => {
         sendMessage(channelId);
     });
 });
+
+function showLoadingSpinner() {
+    document.getElementById("loadingSpinner").style.display = "block";
+}
+
+function hideLoadingSpinner() {
+    document.getElementById("loadingSpinner").style.display = "none";
+}
+

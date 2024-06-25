@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('form');
     form.addEventListener('submit', (event) => {
         const username = document.querySelector('input[name="username"]').value;
-        sessionStorage.setItem('username', username);
+        localStorage.setItem('username', username);
     });
 });
 
