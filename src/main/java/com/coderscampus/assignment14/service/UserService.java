@@ -15,11 +15,11 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public User saveUser(User user) {
+    public void saveUser(User user) {
         if (userRepository.findByUsername(user.getUsername()) != null) {
             throw new IllegalArgumentException("Username already exists");
         }
-        return userRepository.save(user);
+        userRepository.save(user);
     }
 
     public User findByUsername(String username) {
